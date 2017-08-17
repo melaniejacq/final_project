@@ -1,0 +1,55 @@
+<!-- Validation failure messages -->
+<% if @superpower.errors.any? %>
+  <% @superpower.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Superpower</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_superpower" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for candidate_id -->
+      <div class="form-group">
+        <label for="candidate_id" class="control-label">
+          Candidate
+        </label>
+
+        <input type="text" id="candidate_id" name="candidate_id" placeholder="Candidate" class="form-control" value="<%= @superpower.candidate_id %>">
+      </div>
+
+      <!-- Label and input for skill_id -->
+      <div class="form-group">
+        <label for="skill_id" class="control-label">
+          Skill
+        </label>
+
+        <input type="text" id="skill_id" name="skill_id" placeholder="Skill" class="form-control" value="<%= @superpower.skill_id %>">
+      </div>
+
+      <!-- Label and input for story -->
+      <div class="form-group">
+        <label for="story" class="control-label">
+          Story
+        </label>
+
+        <textarea id="story" name="story" placeholder="Story" class="form-control" rows="3"><%= @superpower.story %></textarea>
+      </div>
+
+      <button class="btn btn-success">
+        Create Superpower
+      </button>
+      or
+      <a href="/superpowers">Cancel</a>
+    </form>
+  </div>
+</div>

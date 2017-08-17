@@ -1,0 +1,55 @@
+<!-- Validation failure messages -->
+<% if @feature.errors.any? %>
+  <% @feature.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Feature #<%= @feature.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_feature/<%= @feature.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for job_id -->
+      <div class="form-group">
+        <label for="job_id" class="control-label">
+          Job
+        </label>
+
+        <input type="text" id="job_id" name="job_id" placeholder="Job" class="form-control" value="<%= @feature.job_id %>">
+      </div>
+
+      <!-- Label and input for attribute_id -->
+      <div class="form-group">
+        <label for="attribute_id" class="control-label">
+          Attribute
+        </label>
+
+        <input type="text" id="attribute_id" name="attribute_id" placeholder="Attribute" class="form-control" value="<%= @feature.attribute_id %>">
+      </div>
+
+      <!-- Label and input for description -->
+      <div class="form-group">
+        <label for="description" class="control-label">
+          Description
+        </label>
+
+        <textarea id="description" name="description" placeholder="Description" class="form-control" rows="3"><%= @feature.description %></textarea>
+      </div>
+
+      <button class="btn btn-warning">
+        Update Feature
+      </button>
+      or
+      <a href="/features/<%= @feature.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

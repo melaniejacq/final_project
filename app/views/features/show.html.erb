@@ -1,0 +1,31 @@
+<div class="page-header">
+  <h3>Feature #<%= @feature.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Job</dt>
+      <dd><%= @feature.job_id %></dd>
+
+      <dt>Attribute</dt>
+      <dd><%= @feature.attribute_id %></dd>
+
+      <dt>Description</dt>
+      <dd><%= @feature.description %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/features" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/features/<%= @feature.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_feature/<%= @feature.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

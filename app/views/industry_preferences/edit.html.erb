@@ -1,0 +1,55 @@
+<!-- Validation failure messages -->
+<% if @industry_preference.errors.any? %>
+  <% @industry_preference.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Industry Preference #<%= @industry_preference.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_industry_preference/<%= @industry_preference.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for candidate_id -->
+      <div class="form-group">
+        <label for="candidate_id" class="control-label">
+          Candidate
+        </label>
+
+        <input type="text" id="candidate_id" name="candidate_id" placeholder="Candidate" class="form-control" value="<%= @industry_preference.candidate_id %>">
+      </div>
+
+      <!-- Label and input for industry_id -->
+      <div class="form-group">
+        <label for="industry_id" class="control-label">
+          Industry
+        </label>
+
+        <input type="text" id="industry_id" name="industry_id" placeholder="Industry" class="form-control" value="<%= @industry_preference.industry_id %>">
+      </div>
+
+      <!-- Label and input for classification -->
+      <div class="form-group">
+        <label for="classification" class="control-label">
+          Classification
+        </label>
+
+        <input type="text" id="classification" name="classification" placeholder="Classification" class="form-control" value="<%= @industry_preference.classification %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Industry Preference
+      </button>
+      or
+      <a href="/industry_preferences/<%= @industry_preference.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

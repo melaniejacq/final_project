@@ -12,6 +12,6 @@
 class Preference < ApplicationRecord
 
     belongs_to :candidate
-    belongs_to :attribute
+    belongs_to :descriptor, :class_name => "Attribute"
 
 end

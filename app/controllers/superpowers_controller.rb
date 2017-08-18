@@ -20,7 +20,7 @@ class SuperpowersController < ApplicationController
   def create
     @superpower = Superpower.new
 
-    @superpower.candidate_id = params[:candidate_id]
+    @superpower.candidate_id = current_candidate.id
     @superpower.skill_id = params[:skill_id]
     @superpower.story = params[:story]
 

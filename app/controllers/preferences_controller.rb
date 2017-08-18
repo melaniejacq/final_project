@@ -20,7 +20,7 @@ class PreferencesController < ApplicationController
   def create
     @preference = Preference.new
 
-    @preference.candidate_id = params[:candidate_id]
+    @preference.candidate_id = current_candidate.id
     @preference.attribute_id = params[:attribute_id]
 
     save_status = @preference.save

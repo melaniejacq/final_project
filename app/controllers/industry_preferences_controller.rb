@@ -20,7 +20,7 @@ class IndustryPreferencesController < ApplicationController
   def create
     @industry_preference = IndustryPreference.new
 
-    @industry_preference.candidate_id = params[:candidate_id]
+    @industry_preference.candidate_id = current_candidate.id
     @industry_preference.industry_id = params[:industry_id]
     @industry_preference.classification = params[:classification]
 

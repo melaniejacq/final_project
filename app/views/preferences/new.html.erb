@@ -19,21 +19,21 @@
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
       <!-- Label and input for candidate_id -->
-      <div class="form-group">
-        <label for="candidate_id" class="control-label">
-          Candidate
-        </label>
+      <!--<div class="form-group">-->
+      <!--  <label for="candidate_id" class="control-label">-->
+      <!--  </label>-->
 
-        <input type="text" id="candidate_id" name="candidate_id" placeholder="Candidate" class="form-control" value="<%= @preference.candidate_id %>">
-      </div>
+      <!--  <input type="hidden" id="candidate_id" name="candidate_id" placeholder="Candidate" class="form-control" value="<%= @preference.candidate_id %>">-->
+      <!--</div>-->
 
       <!-- Label and input for attribute_id -->
       <div class="form-group">
         <label for="attribute_id" class="control-label">
           Attribute
         </label>
+        <%= select_tag("attribute_id", options_from_collection_for_select(Attribute.all, :id, :name), :class => "form-control") %>
 
-        <input type="text" id="attribute_id" name="attribute_id" placeholder="Attribute" class="form-control" value="<%= @preference.attribute_id %>">
+        <!--<input type="text" id="attribute_id" name="attribute_id" placeholder="Attribute" class="form-control" value="<%= @preference.attribute_id %>">-->
       </div>
 
       <button class="btn btn-success">

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-    root "photos#index"
+    root "superpowers#index"
   
   # Routes for the Job_type_match resource:
   # CREATE

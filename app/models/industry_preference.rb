@@ -15,4 +15,8 @@ class IndustryPreference < ApplicationRecord
     belongs_to :candidate
     belongs_to :industry
 
+    validates :candidate_id, :presence => true, :uniqueness => { :scope => :industry_id }
+    validates :industry_id, :presence => true
+    
+
 end

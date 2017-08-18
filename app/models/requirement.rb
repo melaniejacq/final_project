@@ -15,4 +15,8 @@ class Requirement < ApplicationRecord
     belongs_to :job
     belongs_to :skill
 
+    validates :job_id, :presence => true, :uniqueness => { :scope => :skill_id }
+    validates :skill_id, :presence => true
+    # validates :use_case, :presence => true
+
 end

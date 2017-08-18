@@ -14,4 +14,9 @@ class Skill < ApplicationRecord
     has_many :superpowers, :dependent => :destroy
     has_many :requirements, :dependent => :destroy
 
+    validates :name, :presence => true
+    # validates :description, :presence => true
+
+
+
 end

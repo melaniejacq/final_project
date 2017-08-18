@@ -14,4 +14,7 @@ class Attribute < ApplicationRecord
     has_many :features
     has_many :preferences
 
+    validates   :name, :presence => true
+    validates :description, :presence => true
+
 end

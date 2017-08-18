@@ -14,4 +14,7 @@ class Preference < ApplicationRecord
     belongs_to :candidate
     belongs_to :descriptor, :class_name => "Attribute"
 
+    validates :candidate_id, :presence => true, :uniqueness => { :scope => :attribute_id }
+    validates :attribute_id, :presence => true
+    
 end

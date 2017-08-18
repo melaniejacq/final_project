@@ -38,4 +38,9 @@ class Candidate < ApplicationRecord
         has_many :industry_preferences, :dependent => :destroy
         has_many :job_type_matches, :dependent => :destroy
          
+        validates :email, :presence => true, :uniqueness => { :case_sensitive => false }
+        validates :first_name, :presence => true
+        validates :last_name, :presence => true
+        # validates :location, :presence => true
+
 end

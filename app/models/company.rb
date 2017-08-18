@@ -16,5 +16,10 @@ class Company < ApplicationRecord
     has_many :recruiters, :dependent => :nullify
     has_many :jobs, :dependent => :destroy
     belongs_to :industry
-    
+
+    validates :name, :presence => true, :uniqueness => { :case_sensitive => false }
+    # validates :logo, :presence => true
+    validates :hq_address, :presence => true
+    validates :industry_id, :presence => true
+
 end

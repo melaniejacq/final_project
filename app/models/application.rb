@@ -12,4 +12,6 @@ class Application < ApplicationRecord
 
     belongs_to :match, :required => false
 
+    validates :match_id, :presence => true
+
 end

@@ -21,10 +21,9 @@
       <!-- Label and input for candidate_id -->
       <div class="form-group">
         <label for="candidate_id" class="control-label">
-          Candidate
         </label>
 
-        <input type="text" id="candidate_id" name="candidate_id" placeholder="Candidate" class="form-control" value="<%= @industry_preference.candidate_id %>">
+        <input type="hidden" id="candidate_id" name="candidate_id" placeholder="Candidate" class="form-control" value="<%= @industry_preference.candidate_id %>">
       </div>
 
       <!-- Label and input for industry_id -->
@@ -32,18 +31,19 @@
         <label for="industry_id" class="control-label">
           Industry
         </label>
+        <%= select_tag("industry_id", options_from_collection_for_select(Industry.all, :id, :name), :class => "form-control") %>
 
-        <input type="text" id="industry_id" name="industry_id" placeholder="Industry" class="form-control" value="<%= @industry_preference.industry_id %>">
+        <!--<input type="text" id="industry_id" name="industry_id" placeholder="Industry" class="form-control" value="<#%= @industry_preference.industry_id %>">-->
       </div>
 
       <!-- Label and input for classification -->
-      <div class="form-group">
-        <label for="classification" class="control-label">
-          Classification
-        </label>
+      <!--<div class="form-group">-->
+      <!--  <label for="classification" class="control-label">-->
+      <!--    Classification-->
+      <!--  </label>-->
 
-        <input type="text" id="classification" name="classification" placeholder="Classification" class="form-control" value="<%= @industry_preference.classification %>">
-      </div>
+      <!--  <input type="text" id="classification" name="classification" placeholder="Classification" class="form-control" value="<#%= @industry_preference.classification %>">-->
+      <!--</div>-->
 
       <button class="btn btn-success">
         Create Industry Preference

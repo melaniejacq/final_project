@@ -21,20 +21,20 @@
       <!-- Label and input for candidate_id -->
       <div class="form-group">
         <label for="candidate_id" class="control-label">
-          Candidate
         </label>
 
-        <input type="text" id="candidate_id" name="candidate_id" placeholder="Candidate" class="form-control" value="<%= @superpower.candidate_id %>">
-      </div>
+        <input type="hidden" id="candidate_id" name="candidate_id" placeholder="Candidate" class="form-control" value="<%= @superpower.candidate_id %>">
+      <!--</div>Should value be "current_user.id" instead?-->
 
       <!-- Label and input for skill_id -->
       <div class="form-group">
         <label for="skill_id" class="control-label">
           Skill
         </label>
-
-        <input type="text" id="skill_id" name="skill_id" placeholder="Skill" class="form-control" value="<%= @superpower.skill_id %>">
+      <%= select_tag("skill_id", options_from_collection_for_select(Skill.all, :id, :name), :class => "form-control") %>
+      <!--  <input type="text" id="skill_id" name="skill_id" placeholder="Skill" class="form-control" value="<%= @superpower.skill_id %>">-->
       </div>
+
 
       <!-- Label and input for story -->
       <div class="form-group">

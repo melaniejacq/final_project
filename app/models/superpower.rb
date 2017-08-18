@@ -15,4 +15,8 @@ class Superpower < ApplicationRecord
     belongs_to :candidate
     belongs_to :skill
 
+    validates :candidate_id, :presence => true, :uniqueness => { :scope => :skill_id }
+    validates :skill_id, :presence => true
+    # validates :story, :presence => true
+
 end

@@ -14,4 +14,7 @@ class JobTypeMatch < ApplicationRecord
     belongs_to :candidate
     belongs_to :job_type
 
+    validates :candidate_id, :presence => true, :uniqueness => { :scope => :job_type_id }
+    validates :job_type_id, :presence => true
+    
 end

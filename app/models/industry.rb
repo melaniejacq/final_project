@@ -13,4 +13,6 @@ class Industry < ApplicationRecord
     has_many :companies
     has_many :industry_preferences, :dependent => :destroy
     
+    validates :name, :presence => true, :uniqueness => { :case_sensitive => false }
+
 end

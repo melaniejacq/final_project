@@ -33,7 +33,7 @@
         </label>
         <%= select_tag("attribute_id", options_from_collection_for_select(Attribute.all, :id, :name), :class => "form-control") %>
 
-        <!--<input type="text" id="attribute_id" name="attribute_id" placeholder="Attribute" class="form-control" value="<%= @preference.attribute_id %>">-->
+        <!--<input type="text" id="attribute_id" name="attribute_id" placeholder="Attribute" class="form-control" value="<%#= @preference.attribute_id %>">-->
       </div>
 
       <button class="btn btn-success">

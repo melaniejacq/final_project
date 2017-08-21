@@ -41,19 +41,31 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
 
+        <% if current_candidate != nil %>
+
           <li><a href="/superpowers">My Superpowers</a></li>
           <li><a href="/preferences">My Work Preferences</a></li>
           <li><a href="/industry_preferences">My Industry Preferences</a></li>
-          <!--<li><a href="/job_type_matches">My Job Type Matches</a></li>-->
+          <li><a href="/job_type_matches">My Job Type Matches</a></li>
+
+        <!--<#% elsif %>-->
+        <!--<#% if current_recruiter != nil %>-->
+
+        <!--  <li><a href="/jobs">Jobs</a></li>-->
+        <!--  <li><a href="/matches">Matches</a></li>-->
+        <!--  <li><a href="/applications">Applications</a></li>-->
+        <!--  <li><a href="/invites">Invites</a></li>-->
+
+        <% else %>
+        <li><a href="/candidates/sign_in">Sign In</a></li>
+
+        <% end %>
+
 
 <!--JOB-SPECIFIC RESOURCES-->
           <!--<li><a href="/requirements">Requirements</a></li>-->
           <!--<li><a href="/features">Features</a></li>-->
 
-          <!--<li><a href="/matches">Matches</a></li>-->
-          <!--<li><a href="/applications">Applications</a></li>-->
-          <!--<li><a href="/invites">Invites</a></li>-->
-  
 <!--Descriptors and other resources          -->
           <!--<li><a href="/skills">Skills</a></li>-->
           <!--<li><a href="/attributes">Attributes</a></li>-->
@@ -61,7 +73,6 @@
           <!--<li><a href="/industries">Industries</a></li>-->
           <!--<li><a href="/companies">Companies</a></li>-->
           <!--<li><a href="/job_types">Job Types</a></li>-->
-          <!--<li><a href="/jobs">Jobs</a></li>-->
 
           <!--<li><a href="/batch_action_admin_admin_users">Batch Action Admin Admin Users</a></li>-->
           <!--<li><a href="/admin_admin_users">Admin Admin Users</a></li>-->
@@ -120,3 +131,4 @@
   </div>
 </body>
 </html>
+    <!--<#% end %>-->

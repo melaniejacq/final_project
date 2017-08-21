@@ -205,7 +205,6 @@ Rails.application.routes.draw do
   get "/delete_job/:id", :controller => "jobs", :action => "destroy"
   #------------------------------
 
-  devise_for :recruiters
   # Routes for the Industry resource:
   # CREATE
   get "/industries/new", :controller => "industries", :action => "new"
@@ -257,6 +256,7 @@ Rails.application.routes.draw do
   get "/delete_match/:id", :controller => "matches", :action => "destroy"
   #------------------------------
 
+  devise_for :recruiters
   devise_for :candidates
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

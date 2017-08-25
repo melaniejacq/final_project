@@ -21,10 +21,19 @@
       <!-- Label and input for name -->
       <div class="form-group">
         <label for="name" class="control-label">
-          Name
+          Job Type Name
         </label>
 
         <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @job_type.name %>">
+      </div>
+
+      <!-- Label and input for description -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Description
+        </label>
+
+        <input type="text" id="description" name="description" placeholder="Description" class="form-control" value="<%= @job_type.description %>">
       </div>
 
       <button class="btn btn-warning">

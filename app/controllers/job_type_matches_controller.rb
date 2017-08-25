@@ -20,7 +20,7 @@ class JobTypeMatchesController < ApplicationController
   def create
     @job_type_match = JobTypeMatch.new
 
-    @job_type_match.candidate_id = params[:candidate_id]
+    @job_type_match.candidate_id = current_candidate.id
     @job_type_match.job_type_id = params[:job_type_id]
 
     save_status = @job_type_match.save

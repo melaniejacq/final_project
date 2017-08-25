@@ -19,21 +19,22 @@
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
       <!-- Label and input for candidate_id -->
-      <div class="form-group">
-        <label for="candidate_id" class="control-label">
-          Candidate
-        </label>
+      <!--<div class="form-group">-->
+      <!--  <label for="candidate_id" class="control-label">-->
+      <!--    Candidate-->
+      <!--  </label>-->
 
-        <input type="text" id="candidate_id" name="candidate_id" placeholder="Candidate" class="form-control" value="<%= @job_type_match.candidate_id %>">
-      </div>
+      <!--  <input type="text" id="candidate_id" name="candidate_id" placeholder="Candidate" class="form-control" value="<%= @job_type_match.candidate_id %>">-->
+      <!--</div>-->
 
       <!-- Label and input for job_type_id -->
       <div class="form-group">
         <label for="job_type_id" class="control-label">
           Job type
         </label>
-
-        <input type="text" id="job_type_id" name="job_type_id" placeholder="Job type" class="form-control" value="<%= @job_type_match.job_type_id %>">
+        
+        <%= select_tag("job_type_id", options_from_collection_for_select(JobType.all, :id, :name, :description), :class => "form-control") %>
+        <!--<input type="text" id="job_type_id" name="job_type_id" placeholder="Job type" class="form-control" value="<%= @job_type_match.job_type_id %>">-->
       </div>
 
       <button class="btn btn-success">

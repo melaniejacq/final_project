@@ -5,11 +5,14 @@
 <div class="row">
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
-      <dt>Candidate</dt>
-      <dd><%= @job_type_match.candidate_id %></dd>
+      <!--<dt>Candidate</dt>-->
+      <!--<dd><%= @job_type_match.candidate_id %></dd>-->
 
       <dt>Job type</dt>
-      <dd><%= @job_type_match.job_type_id %></dd>
+      <dd><%= @job_type_match.job_type.name %></dd>
+      
+      <dt>Description</dt>
+      <dd><%= @job_type_match.job_type.description %></dd>
 
     </dl>
 
@@ -17,9 +20,9 @@
       <a href="/job_type_matches" class="btn btn-primary">
         Back
       </a>
-      <a href="/job_type_matches/<%= @job_type_match.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
+      <!--<a href="/job_type_matches/<%= @job_type_match.id %>/edit" class="btn btn-warning">-->
+      <!--  Edit-->
+      <!--</a>-->
       <a href="/delete_job_type_match/<%= @job_type_match.id %>" class="btn btn-danger" rel="nofollow">
         Delete
       </a>

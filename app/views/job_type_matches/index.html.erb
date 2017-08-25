@@ -16,11 +16,11 @@
 
       <% @job_type_matches.each do |job_type_match| %>
       <tr>
-        <td><%= job_type_match.candidate_id %></td>
-        <td><%= job_type_match.job_type_id %></td>
+        <td><%= job_type_match.job_type.name %></td>
+        <td><%= job_type_match.job_type.description %></td>
         <td>
-          <a href="/job_type_matches/<%= job_type_match.id %>" class="btn btn-primary">Show</a>
-          <a href="/job_type_matches/<%= job_type_match.id %>/edit" class="btn btn-warning">Edit</a>
+          <!--<a href="/job_type_matches/<%= job_type_match.id %>" class="btn btn-primary">Show</a>-->
+          <!--<a href="/job_type_matches/<%= job_type_match.id %>/edit" class="btn btn-warning">Edit</a>-->
           <a href="/delete_job_type_match/<%= job_type_match.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
         </td>
       </tr>

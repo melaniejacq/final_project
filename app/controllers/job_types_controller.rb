@@ -60,7 +60,7 @@ class JobTypesController < ApplicationController
     if URI(request.referer).path == "/job_types/#{@job_type.id}"
       redirect_to("/", :notice => "Job type deleted.")
     else
-      redirect_to(:back, :notice => "Job type deleted.")
+      redirect_to("/job_types", :notice => "Job type deleted.")
     end
   end
 end

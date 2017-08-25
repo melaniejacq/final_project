@@ -61,7 +61,7 @@ class PreferencesController < ApplicationController
     if URI(request.referer).path == "/preferences/#{@preference.id}"
       redirect_to("/", :notice => "Preference deleted.")
     else
-      redirect_to(:back, :notice => "Preference deleted.")
+      redirect_to("/preferences", :notice => "Preferences updated.")
     end
   end
 end

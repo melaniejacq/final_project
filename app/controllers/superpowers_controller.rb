@@ -1,7 +1,9 @@
 class SuperpowersController < ApplicationController
   def index
     @superpowers = Superpower.all
-
+    # New code to only show current user's superpowers:
+    # @superpowers = Superpower.where(:candidate_id => :current_candidate.id)
+    
     render("superpowers/index.html.erb")
   end
 
@@ -63,7 +65,7 @@ class SuperpowersController < ApplicationController
     if URI(request.referer).path == "/superpowers/#{@superpower.id}"
       redirect_to("/", :notice => "Superpower deleted.")
     else
-      redirect_to(:back, :notice => "Superpower deleted.")
+      redirect_to("/superpowers", :notice => "Superpowers updated.")
     end
   end
 end

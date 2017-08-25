@@ -37,16 +37,16 @@
       </div>
 
       <!-- Label and input for classification -->
-      <!--<div class="form-group">-->
-      <!--  <label for="classification" class="control-label">-->
-      <!--    Classification-->
-      <!--  </label>-->
-
-      <!--  <input type="text" id="classification" name="classification" placeholder="Classification" class="form-control" value="<#%= @industry_preference.classification %>">-->
-      <!--</div>-->
+      <div class="form-group">
+        <label for="classification" class="control-label">
+          Notes that employers should know about this industry preference
+        </label>
+        <input type="text" id="classification" name="classification" placeholder="Why is this your preferred industry?" class="form-control" value="<%= @industry_preference.classification %>">
+        <!--<input type="text" id="classification" name="classification" placeholder="Classification" class="form-control" value="<%#= @industry_preference.classification %>">-->
+      </div>
 
       <button class="btn btn-success">
-        Create Industry Preference
+        Add Industry Preference
       </button>
       or
       <a href="/industry_preferences">Cancel</a>

@@ -36,9 +36,9 @@ class IndustryPreferencesController < ApplicationController
   def edit
     @industry_preference = IndustryPreference.find(params[:id])
 
-    @industry_preference.candidate_id = current_candidate.id
-    @industry_preference.industry_id = params[:industry_id]
-    @industry_preference.classification = params[:classification]
+    # @industry_preference.candidate_id = current_candidate.id
+    # @industry_preference.industry_id = params[:industry_id]
+    # @industry_preference.classification = params[:classification]
 
     render("industry_preferences/edit.html.erb")
   end
@@ -67,7 +67,9 @@ class IndustryPreferencesController < ApplicationController
     if URI(request.referer).path == "/industry_preferences/#{@industry_preference.id}"
       redirect_to("/", :notice => "Industry preference deleted.")
     else
-      redirect_to(:back, :notice => "Industry preference deleted.")
+      redirect_to("/industry_preferences", :notice => "Industry preferences updated.")
+      # Changed because getting error "undefined method `back_url' for #<IndustryPreferencesController:0x007feeae007950>"
+      # redirect_to(:back, :notice => "Industry preference deleted.")
     end
   end
 end

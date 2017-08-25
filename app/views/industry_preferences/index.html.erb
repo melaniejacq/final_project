@@ -10,11 +10,11 @@
     <table class="table table-striped table-hover">
       <tr>
         <th>Industry</th>
-        <th>Classification</th>
+        <th>Notes</th>
         <th>Actions</th>
       </tr>
 
-      <% @industry_preferences.each do |industry_preference| %>
+      <% current_candidate.industry_preferences.each do |industry_preference| %>
       <tr>
         <td><%= industry_preference.industry.name %></td>
         <td><%= industry_preference.classification %></td>

@@ -50,8 +50,8 @@
         <label for="job_type_id" class="control-label">
           Job type
         </label>
-
-        <input type="text" id="job_type_id" name="job_type_id" placeholder="Job type" class="form-control" value="<%= @job.job_type_id %>">
+      <%= select_tag("job_type_id", options_from_collection_for_select(JobType.all, :id, :name), :class => "form-control") %>
+        <!--<input type="text" id="job_type_id" name="job_type_id" placeholder="Job type" class="form-control" value="<#%= @job.job_type_id %>">-->
       </div>
 
       <button class="btn btn-success">

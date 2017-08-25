@@ -26,6 +26,16 @@
 
         <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @job_type.name %>">
       </div>
+<!---->
+      <!-- Label and input for DESCRIPTION -->
+      <div class="form-group">
+        <label for="description" class="control-label">
+          Description
+        </label>
+
+        <input type="text" id="description" name="description" placeholder="Description" class="form-control" value="<%= @job_type.description %>">
+      </div>
+<!---->
 
       <button class="btn btn-success">
         Create Job Type

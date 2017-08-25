@@ -14,7 +14,7 @@
         <th>Actions</th>
       </tr>
 
-      <% @superpowers.each do |superpower| %>
+      <% current_candidate.superpowers.each do |superpower| %>
       <tr>
         <td><%= superpower.skill.name %></td>
         <td><%= superpower.story %></td>

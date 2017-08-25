@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-    root "superpowers#index"
+    root "home#welcome"
+    
+  # HOME PAGE
+  get "/home", :controller => "home", :action => "welcome"
   
   # Routes for the Job_type_match resource:
   # CREATE

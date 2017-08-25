@@ -21,6 +21,7 @@ class JobTypesController < ApplicationController
     @job_type = JobType.new
 
     @job_type.name = params[:name]
+    @job_type.description = params[:description]
 
     save_status = @job_type.save
 

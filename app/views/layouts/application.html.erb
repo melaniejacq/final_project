@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>FinalProject</title>
+  <title>Matcharoo</title>
 
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.5/cerulean/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -48,53 +48,33 @@
           <li><a href="/industry_preferences">My Industry Preferences</a></li>
           <li><a href="/job_type_matches">My Job Type Matches</a></li>
 
-        <!--<#% elsif %>-->
-        <!--<#% if current_recruiter != nil %>-->
+        <% elsif current_recruiter != nil %>
 
-        <!--  <li><a href="/jobs">Jobs</a></li>-->
-        <!--  <li><a href="/matches">Matches</a></li>-->
-        <!--  <li><a href="/applications">Applications</a></li>-->
-        <!--  <li><a href="/invites">Invites</a></li>-->
+          <li><a href="/jobs">My Posted Jobs</a></li>
+          <li><a href="/matches">My Candidate Matches</a></li>
+          <!--<li><a href="/applications">Applications</a></li>-->
+          <!--<li><a href="/invites">Invites</a></li>-->
 
         <% else %>
-        <li><a href="/candidates/sign_in">Sign In</a></li>
-
+        
+          <li>
+            <a href="/recruiters/sign_in">
+              Recruiter Sign In
+            </a>
+          </li>
+          
+          <li>
+            <a href="/recruiters/sign_up">
+            / Sign Up
+            </a>
+          </li>  
         <% end %>
 
-
-<!--JOB-SPECIFIC RESOURCES-->
-          <!--<li><a href="/requirements">Requirements</a></li>-->
-          <!--<li><a href="/features">Features</a></li>-->
-
-<!--Descriptors and other resources          -->
-          <!--<li><a href="/skills">Skills</a></li>-->
-          <!--<li><a href="/attributes">Attributes</a></li>-->
-
-          <!--<li><a href="/industries">Industries</a></li>-->
-          <!--<li><a href="/companies">Companies</a></li>-->
-          <!--<li><a href="/job_types">Job Types</a></li>-->
-
-          <!--<li><a href="/batch_action_admin_admin_users">Batch Action Admin Admin Users</a></li>-->
-          <!--<li><a href="/admin_admin_users">Admin Admin Users</a></li>-->
-          <!--<li><a href="/admin_comments">Admin Comments</a></li>-->
-          <!--<li><a href="/rails/info">Sitemap</a></li>-->
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-
-        <% if current_candidate == nil %>
-            <li>
-              <a href="/candidates/sign_in">
-                Sign In
-              </a>
-            </li>
           
-            <li>
-              <a href="/candidates/sign_up">
-                Sign Up!
-              </a>
-            </li>
-        <% else %>
+        <% if current_candidate != nil %>
             <li>
               <a href="/candidates/edit">
               <%= current_candidate.first_name %>
@@ -106,11 +86,52 @@
               Sign-Out 
               </a>
             </li>
-          <% end %>
+            
+        <% elsif current_recruiter != nil %>
+            <li>
+              <a href="/recruiters/edit">
+              <%= current_recruiter.first_name %>
+              </a>
+            </li>
+            <li>
+              <a href="/recruiters/sign_out" data-method="delete" rel="nofollow">  
+              <i class="fa fa-sign-out"></i> 
+              Sign-Out 
+              </a>
+            </li>
+        <% else %>
+            <li>
+              <a href="/candidates/sign_in">
+                Candidate Sign In
+              </a>
+            </li>
+          
+            <li>
+              <a href="/candidates/sign_up">
+                / Sign Up
+              </a>
+            </li>  
+            
+        <% end %>
+
         </ul>
       </div><!-- /.navbar-collapse -->
     </div>
   </nav>
+
+<!--Descriptors and other resources          -->
+          <!--<li><a href="/requirements">Requirements</a></li>-->
+          <!--<li><a href="/features">Features</a></li>-->
+          <!--<li><a href="/skills">Skills</a></li>-->
+          <!--<li><a href="/attributes">Attributes</a></li>-->
+          <!--<li><a href="/industries">Industries</a></li>-->
+          <!--<li><a href="/companies">Companies</a></li>-->
+          <!--<li><a href="/job_types">Job Types</a></li>-->
+<!--Admin-->
+          <!--<li><a href="/batch_action_admin_admin_users">Batch Action Admin Admin Users</a></li>-->
+          <!--<li><a href="/admin_admin_users">Admin Admin Users</a></li>-->
+          <!--<li><a href="/admin_comments">Admin Comments</a></li>-->
+          <!--<li><a href="/rails/info">Sitemap</a></li>-->
 
   <div class="container">
     <% if notice.present? %>

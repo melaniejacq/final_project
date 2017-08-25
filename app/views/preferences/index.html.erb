@@ -9,11 +9,11 @@
   <div class="col-md-12">
     <table class="table table-striped table-hover">
       <tr>
-        <th>Attribute</th>
+        <th>Preference</th>
         <th>Actions</th>
       </tr>
 
-      <% @preferences.each do |preference| %>
+      <% current_candidate.preferences.each do |preference| %>
       <tr>
         <td><%= preference.descriptor.name %></td>
         <td>

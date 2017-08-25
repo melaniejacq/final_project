@@ -1,6 +1,7 @@
 class CompaniesController < ApplicationController
   def index
     @companies = Company.all
+    # @company = Company.find(params[:id])
 
     render("companies/index.html.erb")
   end
@@ -65,7 +66,7 @@ class CompaniesController < ApplicationController
     if URI(request.referer).path == "/companies/#{@company.id}"
       redirect_to("/", :notice => "Company deleted.")
     else
-      redirect_to(:back, :notice => "Company deleted.")
+      redirect_to("/companies", :notice => "Company deleted.")
     end
   end
 end

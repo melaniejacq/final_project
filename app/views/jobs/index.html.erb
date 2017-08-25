@@ -1,6 +1,6 @@
 <div class="page-header">
   <h1>
-    Jobs
+    My Posted Jobs
     <a href="/jobs/new" class="btn btn-lg btn-success">New Job</a>
   </h1>
 </div>
@@ -13,15 +13,18 @@
         <th>Company</th>
         <th>Location</th>
         <th>Job type</th>
+        <!--<th>Candidate Matches</th>-->
         <th>Actions</th>
       </tr>
 
-      <% @jobs.each do |job| %>
+      <% current_recruiter.jobs.each do |job| %>
       <tr>
         <td><%= job.title %></td>
-        <td><%= job.company_id %></td>
+        <td><%= job.company.name %></td>
         <td><%= job.location %></td>
-        <td><%= job.job_type_id %></td>
+        <td><%= job.job_type.name %></td>
+        <!--<td><#%= CANDIDATES THAT FIT HERE %></td>-->
+        
         <td>
           <a href="/jobs/<%= job.id %>" class="btn btn-primary">Show</a>
           <a href="/jobs/<%= job.id %>/edit" class="btn btn-warning">Edit</a>

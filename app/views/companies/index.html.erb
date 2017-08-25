@@ -20,8 +20,9 @@
       <tr>
         <td><%= company.name %></td>
         <td><%= company.logo %></td>
+        <!--<td><img src="<#%= @company.logo %>" width="320"></td>-->
         <td><%= company.hq_address %></td>
-        <td><%= company.industry_id %></td>
+        <td><%= company.industry.name %></td>
         <td>
           <a href="/companies/<%= company.id %>" class="btn btn-primary">Show</a>
           <a href="/companies/<%= company.id %>/edit" class="btn btn-warning">Edit</a>

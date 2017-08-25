@@ -50,8 +50,8 @@
         <label for="industry_id" class="control-label">
           Industry
         </label>
-
-        <input type="text" id="industry_id" name="industry_id" placeholder="Industry" class="form-control" value="<%= @company.industry_id %>">
+        <%= select_tag("industry_id", options_from_collection_for_select(Industry.all, :id, :name), :class => "form-control") %>
+        <!--<input type="text" id="industry_id" name="industry_id" placeholder="Industry" class="form-control" value="<#%= @company.industry_id %>">-->
       </div>
 
       <button class="btn btn-success">

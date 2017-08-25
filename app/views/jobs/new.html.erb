@@ -21,7 +21,7 @@
       <!-- Label and input for title -->
       <div class="form-group">
         <label for="title" class="control-label">
-          Title
+          Job Title
         </label>
 
         <input type="text" id="title" name="title" placeholder="Title" class="form-control" value="<%= @job.title %>">
@@ -33,7 +33,9 @@
           Company
         </label>
 
-        <input type="text" id="company_id" name="company_id" placeholder="Company" class="form-control" value="<%= @job.company_id %>">
+        <!--<input type="text" id="company_id" name="company_id" placeholder="Company" class="form-control" value="<%= @job.company_id %>">-->
+        <%= select_tag("company_id", options_from_collection_for_select(Company.all, :id, :name), :class => "form-control") %>
+
       </div>
 
       <!-- Label and input for location -->

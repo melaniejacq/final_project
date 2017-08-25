@@ -7,7 +7,7 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
-
+    
     render("jobs/show.html.erb")
   end
 
@@ -20,6 +20,7 @@ class JobsController < ApplicationController
   def create
     @job = Job.new
 
+    @job.recruiter_id = current_recruiter.id
     @job.title = params[:title]
     @job.company_id = params[:company_id]
     @job.location = params[:location]

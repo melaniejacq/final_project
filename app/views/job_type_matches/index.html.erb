@@ -14,7 +14,7 @@
         <th>Actions</th>
       </tr>
 
-      <% @job_type_matches.each do |job_type_match| %>
+      <% current_candidate.job_type_matches.each do |job_type_match| %>
       <tr>
         <td><%= job_type_match.job_type.name %></td>
         <td><%= job_type_match.job_type.description %></td>

@@ -32,6 +32,9 @@ class Recruiter < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+
+  has_many :jobs, :dependent => :nullify
+
   belongs_to :company, :required => false
 
   validates :email, :presence => true, :uniqueness => { :case_sensitive => false }

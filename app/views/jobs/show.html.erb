@@ -1,21 +1,21 @@
 <div class="page-header">
-  <h3>Job #<%= @job.id %></h3>
+  <h3><%= @job.title %></h3>
 </div>
 
 <div class="row">
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
-      <dt>Title</dt>
-      <dd><%= @job.title %></dd>
+      <!--<dt>Title</dt>-->
+      <!--<dd><#%= @job.title %></dd>-->
 
       <dt>Company</dt>
-      <dd><%= @job.company_id %></dd>
+      <dd><%= @job.company.name %></dd>
 
       <dt>Location</dt>
       <dd><%= @job.location %></dd>
 
       <dt>Job type</dt>
-      <dd><%= @job.job_type_id %></dd>
+      <dd><%= @job.job_type.name %></dd>
 
     </dl>
 
@@ -30,5 +30,12 @@
         Delete
       </a>
     </div>
+    
+    <!--<ul>-->
+    <!--<#% @job.job_type.job_type_matches.each do |match| %>-->
+    <!--<li><#%= @job.job_type.job_type_matches.candidate_id.email %></li>-->
+    <!--<#% end %>-->
+    <!--</ul>-->
+    
   </div>
 </div>

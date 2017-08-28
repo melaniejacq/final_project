@@ -65,7 +65,7 @@ class IndustryPreferencesController < ApplicationController
     @industry_preference.destroy
 
     if URI(request.referer).path == "/industry_preferences/#{@industry_preference.id}"
-      redirect_to("/", :notice => "Industry preference deleted.")
+      redirect_to("/industry_preferences", :notice => "Industry preference deleted.")
     else
       redirect_to("/industry_preferences", :notice => "Industry preferences updated.")
       # Changed because getting error "undefined method `back_url' for #<IndustryPreferencesController:0x007feeae007950>"

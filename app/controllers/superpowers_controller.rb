@@ -63,7 +63,7 @@ class SuperpowersController < ApplicationController
     @superpower.destroy
 
     if URI(request.referer).path == "/superpowers/#{@superpower.id}"
-      redirect_to("/", :notice => "Superpower deleted.")
+      redirect_to("/superpowers", :notice => "Superpower deleted.")
     else
       redirect_to("/superpowers", :notice => "Superpowers updated.")
     end

@@ -59,9 +59,9 @@ class JobTypeMatchesController < ApplicationController
     @job_type_match.destroy
 
     if URI(request.referer).path == "/job_type_matches/#{@job_type_match.id}"
-      redirect_to("/", :notice => "Job type match deleted.")
+      redirect_to("/job_type_matches", :notice => "Job type match deleted.")
     else
-      redirect_to(:back, :notice => "Job type match deleted.")
+      redirect_to("/job_type_matches", :notice => "Job type match deleted.")
     end
   end
 end
